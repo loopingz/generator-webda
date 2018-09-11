@@ -1,5 +1,3 @@
 import { Service } from 'webda';
 
-class MyService extends Service {
-
-}
+class MyService extends Service {}

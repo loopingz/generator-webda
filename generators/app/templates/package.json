@@ -12,11 +12,7 @@
     "precommit": "npm run format && npm run test"
   },
   "keywords": [],
-  "files": [
-    "lib",
-    "webda.module.json",
-    "package.json"
-  ],
+  "files": ["lib", "webda.module.json", "package.json"],
   "dependencies": {
     "@types/node": "^10.7.0",
     "webda": "^0.9.11"
@@ -35,19 +31,9 @@
     "webda-shell": "^0.9.11"
   },
   "nyc": {
-    "extension": [
-      ".ts",
-      ".tsx",
-      ".js"
-    ],
-    "include": [
-      "lib/**/*.js"
-    ],
-    "reporter": [
-      "html",
-      "lcov",
-      "json"
-    ],
+    "extension": [".ts", ".tsx", ".js"],
+    "include": ["lib/**/*.js"],
+    "reporter": ["html", "lcov", "json"],
     "report-dir": "./reports",
     "all": true
   }

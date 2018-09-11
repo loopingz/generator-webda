@@ -93,15 +93,15 @@ module.exports = class extends Generator {
     }
     if (this.answers.github) {
       let github = this.answers.github;
-      pkg.bugs = {url: `https://github.com/${github.repo}/issues`};
+      pkg.bugs = { url: `https://github.com/${github.repo}/issues` };
       pkg.homepage = `https://github.com/${github.repo}#readme`;
       pkg.repository = {
         type: 'git',
         url: `git+https://github.com/${github.repo}.git`
-      }
+      };
     }
     this.fs.copy(this.templatePath('**'), this.destinationPath(''));
-    ['sonar-project.properties', 'README.md', '.travis.yml'].forEach( (file) => {
+    ['sonar-project.properties', 'README.md', '.travis.yml'].forEach(file => {
       this.fs.copyTpl(this.templatePath(file), this.destinationPath(file), this.answers);
     });
 
