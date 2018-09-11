@@ -1,0 +1,9 @@
+{
+  "generator-node": {
+    "promptValues": {
+      "authorName": "Remi Cattiau",
+      "authorEmail": "remi@cattiau.com",
+      "authorUrl": ""
+    }
+  }
+}
