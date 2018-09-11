@@ -1,6 +1,6 @@
 {
   "name": "generator-webda",
-  "version": "0.0.0",
+  "version": "0.9.0",
   "description": "Generate Webda module",
   "homepage": "https://webda.io",
   "author": {
@@ -30,7 +30,7 @@
     "jest": "^23.5.0"
   },
   "engines": {
-    "npm": ">= 4.0.0"
+    "npm": ">= 8.0.0"
   },
   "dependencies": {
     "yeoman-generator": "^2.0.1",
