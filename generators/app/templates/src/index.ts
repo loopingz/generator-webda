@@ -1,7 +1,5 @@
-import {
-  ElasticSearchService
-} from './elasticsearchservice';
+import { Service } from 'webda';
 
-export {
-  ElasticSearchService
-};
+class MyService extends Service {
+
+}

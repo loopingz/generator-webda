@@ -1,3 +1,3 @@
-# webda-module sample
+# <%= name %>
 
-This project is a blank project to help you build more Webda module
+This project is a based on the default webda-module project
