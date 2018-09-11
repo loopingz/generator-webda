@@ -1,12 +1,23 @@
 'use strict';
 const Generator = require('yeoman-generator');
-const chalk = require('chalk');
-const yosay = require('yosay');
 
 module.exports = class extends Generator {
+  logo(lines) {
+    const logoLines = require('./logo.json');
+    console.log('');
+    logoLines.forEach((line, idx) => {
+      line = '  ' + line.join('') + '  ';
+      if (idx > 0 && lines.length > idx - 1) {
+        line += lines[idx - 1];
+      }
+      console.log(line);
+    });
+    console.log('');
+  }
+
   async prompting() {
     // Have Yeoman greet the user.
-    this.log(yosay(`Welcome to the tremendous ${chalk.red('generator-webda')} generator!`));
+    this.logo(['Welcome to webda module generator', '', 'https://webda.io']);
 
     const prompts = [
       {
