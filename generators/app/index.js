@@ -44,6 +44,11 @@ module.exports = class extends Generator {
       },
       {
         type: 'confirm',
+        name: 'travis',
+        message: 'Would you like to use travis?'
+      },
+      {
+        type: 'confirm',
         name: 'npm',
         message: 'Would you like to publish on npm on tags?'
       }
@@ -83,7 +88,7 @@ module.exports = class extends Generator {
   }
 
   writing() {
-    const pkg = this.fs.readJSON(this.destinationPath('package.json'), {});
+    const pkg = this.fs.readJSON(this.templatePath('package.json'), {});
     pkg.name = this.answers.name;
     pkg.version = this.answers.version;
     pkg.description = this.answers.description;
@@ -109,6 +114,9 @@ module.exports = class extends Generator {
     this.fs.writeJSON(this.destinationPath('package.json'), pkg);
     if (!this.answers.sonar) {
       this.fs.delete(this.destinationPath('sonar-project.properties'));
+    }
+    if (!this.answers.travis) {
+      this.fs.delete(this.destinationPath('.travis.yml'));
     }
   }
 
