@@ -3,6 +3,7 @@ const Generator = require('yeoman-generator');
 
 module.exports = class extends Generator {
   logo(lines) {
+    lines = lines || [];
     const logoLines = require('./logo.json');
     console.log('');
     logoLines.forEach((line, idx) => {
