@@ -16,6 +16,10 @@ module.exports = class extends Generator {
     console.log('');
   }
 
+  getName() {
+    return this.appname.replace(/ /g, '-').toLowerCase();
+  }
+
   async prompting() {
     // Have Yeoman greet the user.
     this.logo(['Welcome to webda module generator', '', 'https://webda.io']);
@@ -25,7 +29,7 @@ module.exports = class extends Generator {
         type: 'string',
         name: 'name',
         message: 'Your project name',
-        default: this.appname
+        default: this.getName()
       },
       {
         type: 'string',
