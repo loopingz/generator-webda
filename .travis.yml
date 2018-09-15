@@ -1,5 +1,14 @@
 language: node_js
 node_js:
-  - v10
-  - v8
+- v10
+- v8
 after_script: cat ./coverage/lcov.info | coveralls
+deploy:
+  provider: npm
+  email: rcattiau@loopingz.com
+  skip_cleanup: true
+  tag: next
+  on:
+    tags: true
+  api_key:
+    secure: YN4MNlyXbg3nsCj80nP/tDN0c7+OPecgGBV74y6fkVJDo1f0O1xnZz9fxOEtQrZIfix7HtML6e6+q5rKcbv1P+eUBm4SRiVV6Alx9z8vFcWrWN8o34XsEk98pWVM2yXEpLTg36hBqZDk/fPWsZQ8hxGaN9Y/oZ6AVFwHOQ7e3dlAFnI0FbBpCqIbIkq6cTiKN20zDUvBrhHw+G/BHnUQwVCRCPpyKXJUdEKIY3scbppJ6nfxey5uL/yp7Y272tqJ0n2HqOO1ilCRcFgQNs0x8lhqoXuwB3tFr3fP1dMsWhxXDLCqd6bBQZJP4DyX0ibNqrBW4hYiamwvRzS2qbMwLQ/LFhObFZneWRZ0BwA7+LEiFuSySRcLwYpoRBvGnxwJZRx7lpXueSRrmvBkX4/96P25F6mgjutRAyyzEmnas4JWfdLmuonb+poCIEK4saIEqMQUtavShTxAzrfdvA8n9Y5v6rPP3WZkHNEJZeFvFsWsHLJyLS6mEKUFu2WCjXkmNpgTMKJv/mADS+sfkg/cfyTSY1/IXyhIRTM8AQLKbA4vcwtfBx7PMqFdqqNYvaB0zZOI1zzn75XwhPnOkRUpPagdx62FR/vnwbD/FAHXv0DDWkigBsmCwdMO85t37E2hobBp5Ybho2dHSCtD233iljrHnavDLHUqzQZkkS6xZ8w=
