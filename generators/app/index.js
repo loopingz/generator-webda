@@ -16,7 +16,7 @@ module.exports = class extends Generator {
     console.log('');
   }
 
-  getName() {
+  _getName() {
     return this.appname.replace(/ /g, '-').toLowerCase();
   }
 
@@ -29,7 +29,7 @@ module.exports = class extends Generator {
         type: 'string',
         name: 'name',
         message: 'Your project name',
-        default: this.getName()
+        default: this._getName()
       },
       {
         type: 'string',
