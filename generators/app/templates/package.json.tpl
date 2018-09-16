@@ -19,7 +19,7 @@
   ],
   "dependencies": {
     "@types/node": "^10.7.0",
-    "webda": "^0.9.11"
+    "webda": ">=0.9.12"
   },
   "devDependencies": {
     "@types/node": "^9.6.2",
@@ -31,8 +31,7 @@
     "remap-istanbul": "^0.11.0",
     "source-map-support": "^0.5.4",
     "ts-node": "^5.0.1",
-    "typescript": "^2.8.1",
-    "webda-shell": "^0.9.11"
+    "typescript": "^2.8.1"
   },
   "nyc": {
     "extension": [
