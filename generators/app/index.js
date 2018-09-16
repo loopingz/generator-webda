@@ -104,7 +104,7 @@ module.exports = class extends Generator {
   }
 
   writing() {
-    const pkg = this.fs.readJSON(this.templatePath('package.json'), {});
+    const pkg = this.fs.readJSON(this.templatePath('package.json.tpl'), {});
     pkg.name = this.answers.name;
     pkg.version = this.answers.version;
     pkg.description = this.answers.description;
