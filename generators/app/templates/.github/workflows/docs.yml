@@ -1,0 +1,37 @@
+# For most projects, this workflow file will not need changing; you simply need
+# to commit it to your repository.
+#
+# You may wish to alter this file to override the set of languages analyzed,
+# or to provide custom queries or build logic.
+#
+# ******** NOTE ********
+# We have attempted to detect the languages in your repository. Please check
+# the `language` matrix defined below to confirm you have the correct set of
+# supported CodeQL languages.
+# ******** NOTE ********
+
+name: "github-pages"
+
+on:
+  push:
+    branches: [main]
+
+jobs:
+  analyze:
+    name: Build Github Pages
+    runs-on: ubuntu-latest
+    env:
+      FORCE_COLOR: 1
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+
+      - name: Install dependencies
+        run: yarn
+
+      - name: Publish docs
+        run: yarn docs:publish
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+

@@ -1,0 +1,21 @@
+{
+  "excludePrivate": true,
+  "excludeExternals": true,
+
+  "media": "docs/media",
+  "exclude": ["**/node_modules", "**/*.spec.ts"],
+  "readme": "./readme.md",
+  "pages": {
+    "source": "./docs/",
+    "replaceGlobalsPage": true,
+    "reflectionNavigationTitle": "Modules",
+    "autoDetectPageTitle": true,
+    "autoPopulateChildren": true,
+    "noJekyll": true
+  },
+
+  "theme": "./node_modules/typedoc-loopingz-theme/bin/default",
+
+  "name": "webda.io",
+  "includeVersion": true
+}

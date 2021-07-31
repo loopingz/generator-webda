@@ -6,10 +6,8 @@
   "scripts": {
     "build": "tsc && webda module",
     "pretest": "npm run build",
-    "test": "nyc mocha --timeout=100000",
-    "run": "node core",
-    "format": "node ./scripts/format.js",
-    "precommit": "npm run format && npm run test"
+    "test": "nyc mocha --recursive --exit --timeout=100000 -r ../../node_modules/ts-node/register src/**/*.spec.ts src/*.spec.ts",
+    "run": "node core"
   },
   "keywords": [],
   "files": [
@@ -18,10 +16,11 @@
     "package.json"
   ],
   "dependencies": {
-    "@types/node": "^10.7.0",
-    "webda": ">=0.9.12"
+    "@types/node": "^12.0.0",
+    "@webda/core": ">=1.1.0"
   },
   "devDependencies": {
+    "@istanbuljs/nyc-config-typescript": "^1.0.1",
     "@types/node": "^9.6.2",
     "glob": "^7.1.2",
     "istanbul": "^1.1.0-alpha.1",

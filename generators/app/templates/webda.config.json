@@ -1,0 +1,7 @@
+{
+  "$schema": "./.webda.config.json",
+  "version": 2,
+  "parameters": {},
+  "services": {},
+  "module": {}
+}
