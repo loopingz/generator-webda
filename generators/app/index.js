@@ -182,13 +182,6 @@ module.exports = class extends Generator {
       pkg.devDependencies.husky = "0.0.0";
       pkg.devDependencies["@commitlint/config-conventional"] = "0.0.0";
       pkg.devDependencies.commitlint = "0.0.0";
-      pkg.husky = {
-        hooks: {
-          "pre-commit": "yarn lint:fix",
-          "pre-push": "yarn test",
-          "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
-        }
-      };
     }
     if (this.answers.typedoc) {
       pkg.devDependencies.typedoc = "0.0.0";
@@ -233,6 +226,9 @@ module.exports = class extends Generator {
       this.fs.delete(this.destinationPath("webda.config.json"));
     } else {
       this.fs.delete(this.destinationPath("webda.module.json"));
+    }
+    if (!this.answers.husky) {
+      this.fs.delete(this.destinationPath(".husky"));
     }
     // globOptions.ignore seems to not work
     this.fs.delete(this.destinationPath("package.json.tpl"));
