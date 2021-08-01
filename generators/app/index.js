@@ -156,7 +156,7 @@ module.exports = class extends Generator {
 
   async writing() {
     const pkg = this.fs.readJSON(this.templatePath("package.json.tpl"), {});
-    const typedoc = this.fs.readJSON(this.templatePath("package.json.tpl"), {});
+    const typedoc = this.fs.readJSON(this.templatePath("typedoc.json"), {});
     pkg.name = this.answers.name;
     pkg.version = this.answers.version;
     pkg.description = this.answers.description;
@@ -203,7 +203,11 @@ module.exports = class extends Generator {
     }
     await this.autoUpdate(pkg);
 
-    this.fs.copy(this.templatePath("**"), this.destinationPath(""));
+    this.fs.copy(this.templatePath("**"), this.destinationPath(""), {
+      globOptions: {
+        ignore: ["package.json.tpl", "typedoc.json"]
+      }
+    });
     ["sonar-project.properties", "README.md", ".github/workflows/ci.yml"].forEach(file => {
       this.fs.copyTpl(this.templatePath(file), this.destinationPath(file), this.answers);
     });
@@ -230,6 +234,8 @@ module.exports = class extends Generator {
     } else {
       this.fs.delete(this.destinationPath("webda.module.json"));
     }
+    // globOptions.ignore seems to not work
+    this.fs.delete(this.destinationPath("package.json.tpl"));
   }
 
   install() {

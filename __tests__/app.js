@@ -5,7 +5,6 @@ const assert = require("yeoman-assert");
 const helpers = require("yeoman-test");
 
 describe("generator-webda:app", () => {
-
   it("creates files", async () => {
     await helpers.run(path.join(__dirname, "../generators/app")).withPrompts({ name: "custom-module" });
     assert.file([
@@ -19,29 +18,25 @@ describe("generator-webda:app", () => {
       ".github/workflows/ci.yml",
       "typedoc.json"
     ]);
-    assert.noFile(["webda.module.json"]);
-    const pkg = JSON.parse(readFileSync('package.json').toString());
+    assert.noFile(["webda.module.json", "package.json.tpl"]);
+    const pkg = JSON.parse(readFileSync("package.json").toString());
     // Test auto update
     assert.notStrictEqual(pkg.devDependencies.prettier, "0.0.0");
     assert.notStrictEqual(pkg.dependencies["@types/node"], "^12.0.0");
   });
 
   it("no typedoc", async () => {
-    await helpers.run(path.join(__dirname, "../generators/app")).withPrompts({ name: "custom-module", typedoc: false, module: true, sonar: false, githubAction: false });
-    assert.file([
-      "tsconfig.json",
-      "package.json",
-      "src/index.ts",
-      "README.md",
-      "LICENSE",
-      "webda.module.json"
-    ]);
-    assert.noFile(["sonar-project.properties",".github/workflows/ci.yml", "typedoc.json"]);
+    await helpers
+      .run(path.join(__dirname, "../generators/app"))
+      .withPrompts({ name: "custom-module", typedoc: false, module: true, sonar: false, githubAction: false });
+    assert.file(["tsconfig.json", "package.json", "src/index.ts", "README.md", "LICENSE", "webda.module.json"]);
+    assert.noFile(["sonar-project.properties", ".github/workflows/ci.yml", "typedoc.json", "package.json.tpl"]);
   });
 
-
   it("no typedoc with gh", async () => {
-    await helpers.run(path.join(__dirname, "../generators/app")).withPrompts({ name: "custom-module", typedoc: false, module: true, sonar: false });
+    await helpers
+      .run(path.join(__dirname, "../generators/app"))
+      .withPrompts({ name: "custom-module", typedoc: false, module: true, sonar: false });
     assert.file([
       "tsconfig.json",
       "package.json",
@@ -51,6 +46,6 @@ describe("generator-webda:app", () => {
       "webda.module.json",
       ".github/workflows/ci.yml"
     ]);
-    assert.noFile(["sonar-project.properties",".github/workflows/docs.yml", "typedoc.json"]);
+    assert.noFile(["sonar-project.properties", ".github/workflows/docs.yml", "typedoc.json", "package.json.tpl"]);
   });
 });
