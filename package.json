@@ -1,6 +1,6 @@
 {
   "name": "generator-webda",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "description": "Generate Webda module",
   "homepage": "https://webda.io",
   "author": {
@@ -37,7 +37,9 @@
   },
   "jest": {
     "testEnvironment": "node",
-    "testPathIgnorePatterns": ["generators/app/templates"]
+    "testPathIgnorePatterns": [
+      "generators/app/templates"
+    ]
   },
   "scripts": {
     "lint": "prettier generators/**/* --write",
