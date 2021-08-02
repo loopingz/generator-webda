@@ -233,8 +233,4 @@ module.exports = class extends Generator {
     // globOptions.ignore seems to not work
     this.fs.delete(this.destinationPath("package.json.tpl"));
   }
-
-  install() {
-    this.yarnInstall();
-  }
 };
