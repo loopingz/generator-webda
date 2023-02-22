@@ -56,7 +56,8 @@ module.exports = class extends Generator {
     if (!this.options.name) {
       this.logo([`Welcome to webda ${type} generator`, "", "https://webda.io"]);
       this.answers = await this.prompt(prompts);
-      this.answers.target = path.join(target, this.answers.name);
+      // We use basename to allow @webda/xxx as name
+      this.answers.target = path.join(target, path.basename(this.answers.name));
     } else {
       this.answers = await this.prompt(prompts.slice(2));
       this.answers.name = this.options.name;
