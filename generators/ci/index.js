@@ -49,6 +49,13 @@ module.exports = class extends Generator {
         message: "Do you want to use typedoc?",
         default: true,
         store: true
+      },
+      {
+        type: "confirm",
+        name: "autoversion",
+        message: "Do you want to use auto-version on push on main?",
+        default: true,
+        store: true
       }
     ];
     this.answers = await this.prompt(prompts);
@@ -130,6 +137,11 @@ module.exports = class extends Generator {
       pkg.devDependencies["gh-pages"] = "0.0.0";
       pkg.scripts["docs:publish"] = "yarn docs && gh-pages -t -d .built-docs";
     }
+
+    if (this.answers.autoversion && !this.fs.exists("lerna.json")) {
+      pkg.devDependencies["standard-version"] ??= "0.0.0";
+    }
+
     await this.autoUpdate(pkg);
 
     this.fs.copy(this.templatePath("**"), this.destinationPath(""), {
@@ -137,6 +149,15 @@ module.exports = class extends Generator {
         ignore: ["typedoc.json"]
       }
     });
+
+    if (this.answers.autoversion) {
+      if (!this.fs.exists("lerna.json")) {
+        pkg.scripts["new-version"] = "standard-version";
+      }
+    } else {
+      this.fs.delete(".github/workflows/auto-release.yml");
+    }
+
     ["sonar-project.properties", "README.md", ".github/workflows/ci.yml"].forEach(file => {
       this.fs.copyTpl(this.templatePath(file), this.destinationPath(file), this.answers);
     });
