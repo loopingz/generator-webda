@@ -1,3 +1,3 @@
 import { WebdaTest } from "@webda/core/test";
 
-class MyServiceTest extends WebdaTest {}
+class <%= name %>Test extends WebdaTest {}

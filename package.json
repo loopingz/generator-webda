@@ -38,7 +38,9 @@
   "jest": {
     "testEnvironment": "node",
     "testPathIgnorePatterns": [
-      "generators/app/templates"
+      "generators/module/templates",
+      "generators/model/templates",
+      "generators/service/templates"
     ]
   },
   "scripts": {

@@ -11,6 +11,12 @@ npm install -g yo
 npm install -g generator-webda
 ```
 
+This generator is directly callable from `@webda/shell`
+
+```bash
+npx @webda/shell init
+```
+
 Then generate your new project:
 
 ```bash

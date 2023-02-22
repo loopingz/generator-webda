@@ -3,6 +3,7 @@ lib
 webda.module.json
 yarn.lock
 package-lock.json
-.webda-config-schema.json
-built-docs
+.webda-*-schema.json
+.built-docs
 *.log
+.registry
