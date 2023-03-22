@@ -8,6 +8,7 @@
     "build": "webda build",
     "pretest": "npm run build",
     "test": "c8 mocha --recursive --exit --timeout=100000 -r ../../node_modules/ts-node/register src/**/*.spec.ts",
+    "test:debug": "mocha --recursive --exit --timeout=100000 -r ../../node_modules/ts-node/register src/**/*.spec.ts",
     "new-model": "webda init webda:model",
     "new-service": "webda init webda:service"
   },
@@ -22,6 +23,7 @@
     "@webda/core": ">=2.0.0"
   },
   "devDependencies": {
+    "@testdeck/mocha": "^0.3.2",
     "@types/node": "^14.6.0",
     "@webda/shell": ">=2.0.0",
     "c8": "^7.11.3",
