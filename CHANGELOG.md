@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.4.0](https://github.com/loopingz/generator-webda/compare/v1.3.0...v1.4.0) (2023-03-22)
+
+
+### Features
+
+* add index exporter file ([64ccea6](https://github.com/loopingz/generator-webda/commit/64ccea64321099a512904a101c9a5eb269236dad))
+* add test:debug target for module ([90be0d0](https://github.com/loopingz/generator-webda/commit/90be0d0a5adefa460bafce40e7ae7b7b8c63dae9))
+* allow namespaced package name for module ([c9626c3](https://github.com/loopingz/generator-webda/commit/c9626c326d220da01a348ee88140c7860a5c5406))
+* improve default unit test generation ([4d83ca9](https://github.com/loopingz/generator-webda/commit/4d83ca94be46abbb8607d001ae16f72513331908))
+
 ## [1.3.0](https://github.com/loopingz/generator-webda/compare/v1.2.0...v1.3.0) (2023-02-22)
 
 
