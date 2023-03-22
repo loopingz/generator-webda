@@ -1,5 +1,8 @@
 import { DeepPartial, Service, ServiceParameters } from "@webda/core";
 
+/**
+ * Sample service configuration
+ */
 class <%= name %>Parameters extends ServiceParameters {
   constructor(params: any) {
     super(params);

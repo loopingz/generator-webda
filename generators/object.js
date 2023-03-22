@@ -39,6 +39,7 @@ module.exports = objectType =>
         };
       }
       this.answers.path ??= this.arguments[1] || defaultPathValue;
+      this.answers.filename = this.answers.name.toLowerCase();
     }
 
     async writing() {

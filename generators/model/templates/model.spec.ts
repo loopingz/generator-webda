@@ -1,4 +1,11 @@
+import { WebdaTest } from "@webda/core/lib/test";
+import { suite, test } from "@testdeck/mocha";
+import * as assert from "assert";
 
-class <%= name %>Test extends webdaTest {
-
+@suite
+class <%= name %>Test extends WebdaTest {
+    @test
+    async empty() {
+        assert.ok(false, "Need to implement some tests");
+    }
 }
