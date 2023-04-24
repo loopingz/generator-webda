@@ -11,12 +11,12 @@ export class <%= name %> extends CoreModel {
      * @returns {Promise<void>}
      * @throws Exception if the action is not available to the user
      */
-    async canAct(ctx, action: string): Promise<this> {
+    async canAct(ctx, action: string): Promise<string | boolean> {
       if (action === "myAction") {
         // Sending directly a 403 code to the browser
-        throw 403;
+        return "Not permitted";
       }
-      return this;
+      return true;
     }
 }
   

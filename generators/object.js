@@ -57,7 +57,7 @@ module.exports = objectType =>
       if (this.fs.exists(this.destinationPath("src/index.ts"))) {
         this.fs.append(
           this.destinationPath("src/index.ts"),
-          `export * from "./${this.answers.path.substring(4)}/${this.answers.name.toLowerCase()}.ts";`
+          `export * from "./${this.answers.path.substring(4)}/${this.answers.name.toLowerCase()}";`
         );
       }
     }

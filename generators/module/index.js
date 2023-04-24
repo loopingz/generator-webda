@@ -66,10 +66,6 @@ module.exports = class extends Generator {
     }
 
     this.answers.type = type;
-    if (type === "module") {
-      this.composeWith(require.resolve("../service"), ["SampleService"], { nogreet: true });
-      this.composeWith(require.resolve("../model"), ["SampleModel"], { nogreet: true });
-    }
   }
 
   async writing() {

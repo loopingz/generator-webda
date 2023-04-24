@@ -1,15 +1,15 @@
-import { WebdaTest } from "@webda/core/lib/test";
+import { WebdaSimpleTest } from "@webda/core/lib/test";
 import { suite, test } from "@testdeck/mocha";
 import * as assert from "assert";
 import { <%= name %> } from "./<%= filename %>";
 
 @suite
-class <%= name %>Test extends WebdaTest {
+class <%= name %>Test extends WebdaSimpleTest {
     service: <%= name %>;
 
     async before() {
         await super.before();
-        this.service = this.registerService(new <%= name %>(this.webda, <%= name %>));
+        this.service = this.registerService(new <%= name %>(this.webda, "<%= name %>"));
         await this.service.init();
     }
 
