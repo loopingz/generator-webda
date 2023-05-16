@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.5.0](https://github.com/loopingz/generator-webda/compare/v1.4.0...v1.5.0) (2023-05-16)
+
+
+### Features
+
+* remove default model generation for project ([f3d903b](https://github.com/loopingz/generator-webda/commit/f3d903b551f25bc0fd55f0a2229c5aeab71bf78d))
+
 ## [1.4.0](https://github.com/loopingz/generator-webda/compare/v1.3.0...v1.4.0) (2023-03-22)
 
 
