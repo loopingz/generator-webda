@@ -146,7 +146,7 @@ module.exports = class extends Generator {
 
     this.fs.copy(this.templatePath("**"), this.destinationPath(""), {
       globOptions: {
-        ignore: ["typedoc.json"]
+        ignore: ["typedoc.json", "**/gitignore"]
       }
     });
 
@@ -162,6 +162,7 @@ module.exports = class extends Generator {
       this.fs.copyTpl(this.templatePath(file), this.destinationPath(file), this.answers);
     });
 
+    this.fs.copy(this.templatePath("gitignore"), this.destinationPath(".gitignore"));
     this.fs.writeJSON(this.destinationPath("package.json"), pkg);
     if (!this.answers.sonar) {
       this.fs.delete(this.destinationPath("sonar-project.properties"));

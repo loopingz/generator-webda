@@ -16,9 +16,10 @@ describe("generator-webda:app", () => {
       "webda.config.json",
       "webda.module.json",
       ".github/workflows/ci.yml",
+      ".gitignore",
       "typedoc.json"
     ]);
-    assert.noFile(["package.json.tpl"]);
+    assert.noFile(["package.json.tpl", "gitignore"]);
     const pkg = JSON.parse(readFileSync("package.json").toString());
     // Test auto update
     assert.notStrictEqual(pkg.devDependencies.prettier, "0.0.0");
