@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.5.1](https://github.com/loopingz/generator-webda/compare/v1.5.0...v1.5.1) (2023-05-17)
+
+
+### Bug Fixes
+
+* ensure .gitignore is set ([6d88e09](https://github.com/loopingz/generator-webda/commit/6d88e0927deb6a1d9006279bda083ea578331a0c))
+
 ## [1.5.0](https://github.com/loopingz/generator-webda/compare/v1.4.0...v1.5.0) (2023-05-16)
 
 
