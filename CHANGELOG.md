@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.5.2](https://github.com/loopingz/generator-webda/compare/v1.5.1...v1.5.2) (2023-05-31)
+
+
+### Bug Fixes
+
+* remove node-register for unit test ([20213fd](https://github.com/loopingz/generator-webda/commit/20213fd66cc605a07a1ce9b7962f250792629f8f))
+
 ### [1.5.1](https://github.com/loopingz/generator-webda/compare/v1.5.0...v1.5.1) (2023-05-17)
 
 
